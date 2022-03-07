@@ -115,12 +115,8 @@ def connect(sid, environ, auth : dict):
     check_token(auth.get('token' , ''))
     query= environ.get("QUERY_STRING")
     query= dict(parse.parse_qsl(query))
-    mytimestamp= query.get("timestamp" , '1971-01-25 12:28:48')
-    mytimestamp = datetime.datetime.strptime(mytimestamp, "%Y-%m-%d %H:%M:%S")
-    user = 1# extract_user(auth.get('token' , ''))
-    if not user :
-        print('Unauthorized user was rejected')
-        return
+    mytimestamp= float(query.get("timestamp"))
+    mytimestamp = datetime.datetime.fromtimestamp(mytimestamp)
     print('connect : ' , sid)
     if not sid in subscribers :
         subscribers[sid] = DATAHANDLER.get_closedts(mytimestamp)
