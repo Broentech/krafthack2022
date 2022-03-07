@@ -13,9 +13,8 @@ __author__ = 'Luca'
 //h-////////////////////////////////////////////////////////////////////////// '''
 
 MODEL_FOLDER = "models"
-BACKUP_FOLDER = "modelsbackup"
 
 DATASET_PATH= "data/krafhack.csv"
 
-MODEL_NAMES = ["model_bolt_"+str(i) for i in range(1,7)]
+MODEL_NAMES = [f"Bolt_{i}_Tensile" for i in range(1,7)]
 

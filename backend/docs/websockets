@@ -1,0 +1,8 @@
+Postman does not allow to export websocket requests, but basically.
+
+connect to localhost:5000 passing a timestamp as parameter. eg
+
+localhost:5000?timestamp=33650928
+
+then send any message on "getTimeseries" topic to start the streaming.. 
+The streaming will continue automatically untill you disconnect.
