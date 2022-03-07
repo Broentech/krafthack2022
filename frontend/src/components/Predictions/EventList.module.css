@@ -1,0 +1,10 @@
+.eventlist {
+    background-color: #cdc2d9;
+    color: #9a8657;
+    width: 33%;
+    float: left;
+    padding: 10px;
+    max-height: 385px;
+    line-height: 0.1;
+}
+
