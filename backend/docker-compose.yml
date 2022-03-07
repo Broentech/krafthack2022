@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  krafthack20222:
+   build: .
+   image: krafthack20222:latest
+   ports:
+      - "5000:5000"
+   environment:
+      - DEBUG_MODE=1
+      - FORCE_DB_POPULATION=1
+
+volumes:
+  dbdata: {}
