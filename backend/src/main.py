@@ -97,8 +97,8 @@ async def getTimeseries(sid, data = None):
 def connect(sid, environ, auth : dict):
     query= environ.get("QUERY_STRING")
     query= dict(parse.parse_qsl(query))
-    mytimestamp= query.get("timestamp")
-    mytimestamp = datetime.datetime.strptime(mytimestamp, "%Y-%m-%d %H:%M:%S")
+    mytimestamp= float(query.get("timestamp"))
+    mytimestamp = datetime.datetime.fromtimestamp(mytimestamp)
     user = 1# extract_user(auth.get('token' , ''))
     if not user :
         print('Unauthorized user was rejected')

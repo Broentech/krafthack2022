@@ -24,6 +24,9 @@ class modelHandler():
     def load_models(self):
         self.mymodels = {}
         print("Reloading models")
+        for modelnames in d.MODEL_NAMES:
+            filenamepkl= modelnames
+
         for filename in os.listdir(d.MODEL_FOLDER):
             f = os.path.join(d.MODEL_FOLDER, filename)
             # checking if it is a file
