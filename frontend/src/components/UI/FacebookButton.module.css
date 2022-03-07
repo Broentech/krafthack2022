@@ -1,0 +1,22 @@
+.actions {
+    cursor: pointer;
+    font: inherit;
+    color: white;
+    background-color: #385962;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.actions:hover {
+    background-color: #6797a4;
+    border-color: #6797a4;
+}
+
+.icon {
+    padding-right: 1rem;
+    font-size: 200%;
+}
