@@ -12,7 +12,7 @@ const EventList = () => {
           <h1>Events</h1>
           <ul>
               {findings.map((finding => (
-                  <li>
+                  <li key={finding.length}>
                       <div>
                           <h5>Sensor : {finding.sensor}</h5>
                           <p>Value : {finding.value} Time : {finding.timestamp}</p>
