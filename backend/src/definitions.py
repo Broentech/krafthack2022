@@ -18,3 +18,4 @@ DATASET_PATH= "data/krafhack.csv"
 
 MODEL_NAMES = [f"Bolt_{i}_Tensile" for i in range(1,7)]
 
+AUDIENCE="krafthack2022"

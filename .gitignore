@@ -1,3 +1,4 @@
 */.idea/
 backend/src/data/prediction_input.parquet
 frontend/node_modules/
+backend/src/data/krafhack2.csv
