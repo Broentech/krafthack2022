@@ -54,27 +54,19 @@ async def read_root(request):
     return web.json_response({"ServiceName": "krafthack2022_predictor", "service started": str(started) , "info": "lucap@broentech.no" })
 
 
-@routes.get('/getdata')
-def get_data(request):
-    return PREDICTOR.get_models()
-
 @routes.get('/getmodels')
 def get_models(request):
-    return PREDICTOR.get_models()
+    return web.json_response(PREDICTOR.get_models())
 
 @routes.get('/getmodelfiles')
 def get_model_files(request):
-    return PREDICTOR.get_model_files()
+    return web.json_response(PREDICTOR.get_model_files())
 
-@routes.get('/predict')
-async def predict(model_id: str):
-    return ""
+@routes.post('/predict')
+async def predict(request):
+    inputjson= await request.json()
+    return web.json_response(PREDICTOR.get_predictions(inputjson))
 
-@routes.get('/downloadfile')
-async def download_file(filename:str):
-    file_location = os.path.join(d.MODEL_FOLDER, filename)
-    if not os.path.isfile(file_location):
-        return web.Response(text="Requested model file not found!", status=404)
 
 
 

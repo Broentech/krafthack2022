@@ -1,0 +1,13 @@
+
+.userprofile {
+    padding-left: 25px;
+    align-items: center;
+}
+
+.userprofile button {
+    padding:25px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    background-color: red;
+}

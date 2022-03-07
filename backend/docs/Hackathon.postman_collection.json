@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "072152ee-7348-416f-a484-4cec530f0973",
+		"name": "Hackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Active Models",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/getmodels",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getmodels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Model Files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/getmodelfiles",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getmodelfiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/predict",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Unit_4_Power\": 308.8678680851719,\n    \"Unit_4_Reactive Power\": 5.592260851774702,\n    \"Turbine_Guide Vane Opening\": 94.44235057034508,\n    \"Turbine_Pressure Drafttube\": 158.15904422443782,\n    \"Turbine_Pressure Spiral Casing\": 5279.876580815982,\n    \"Turbine_Rotational Speed\": 108.05746681657052,\n    \"mode\": \"operation\",\n    \"timestamp\": \"1971-01-25 11: 06: 49\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/predict",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,12 @@
+
+.mainview {
+    color: #1f389b;
+}
+
+.mainview_row {
+    content: "";
+    display: table;
+    clear: both;
+    width: 150%;
+}
+

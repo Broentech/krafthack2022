@@ -1,2 +1,3 @@
 */.idea/
 backend/src/data/prediction_input.parquet
+frontend/node_modules/
