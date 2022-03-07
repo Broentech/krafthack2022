@@ -12,7 +12,7 @@ const CurrentBars = (props) => {
 
     return (
         <BarChart
-            width={600}
+            width={700}
             height={300}
             data={props.data}
             margin={{

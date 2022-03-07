@@ -11,8 +11,7 @@ const predictionsSlice = createSlice({
         currentModelOutput : {} ,
         thresholdFindings : [] ,
         tensionThreshold : 1700 ,
-        startDate : '1971-01-25 11:28:48' ,
-        anomEvents : []
+        startDate : '1971-01-25 11:28:48'
     } ,
     reducers: {
         setTensionThreshold(state, action) {
@@ -87,7 +86,9 @@ const predictionsSlice = createSlice({
                             color = '#B70A0AFF'
                             state.thresholdFindings.push({
                                 sensor : sensorname ,
-                                timestamp : action.payload.timestamp
+                                timestamp : action.payload.timestamp ,
+                                threshold : state.tensionThreshold ,
+                                value : value
                             });
                         }
                         state.currentModelOutput[sensorname] = {
@@ -104,7 +105,6 @@ const predictionsSlice = createSlice({
             state.modelOutput = {};
             state.currentModelOutput = {};
             state.thresholdFindings = [];
-            state.anomEvents = [];
         }
     }
 });

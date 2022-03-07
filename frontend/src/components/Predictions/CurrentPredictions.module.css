@@ -1,4 +1,8 @@
 
 .currentpred {
     background-color: #c9eacb;
+    color: #9a8657;
+    width: 33%;
+    float: left;
+    padding: 10px;
 }

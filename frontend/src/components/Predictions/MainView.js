@@ -8,6 +8,7 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {predictionsActions} from "../../store/predictions-slice";
 import CurrentPredictions from "./CurrentPredictions";
+import EventList from "./EventList";
 
 const MainView = () => {
     const [buttonName , setButtonName] = useState('Disconnect')
@@ -66,6 +67,7 @@ const MainView = () => {
             <PredTitle className={classes.mainview_header} />
             <div className={classes.mainview_row}>
                 <CurrentPredictions />
+                <EventList />
             </div>
             <div className={classes.mainview_row}>
                 <ModelInput />

@@ -12,7 +12,7 @@ const ModelOutput = () => {
                 <TimeseriesGraph
                     key={k}
                     title={k}
-                    chart_width={600}
+                    chart_width={700}
                     chart_height={300}
                     data={modelOutput[k]}
                     margin = {{
