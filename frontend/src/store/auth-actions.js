@@ -41,6 +41,7 @@ export const requestLoginToken = (userObj, is_logIn = false) => {
             dispatch(infoActions.setLoadingCompleted());
 
         } catch (error) {
+            dispatch(authActions.logOut());
             dispatch(infoActions.setLoadingCompleted());
             dispatch(errorActions.setError({
                 errorTitle: 'Authentication failed' ,
@@ -67,6 +68,7 @@ export const requestPostUser = (tokenObj) => {
             const ret = await postUser();
             dispatch(authActions.setToken(tokenObj));
         } catch (error) {
+            dispatch(authActions.logOut());
             dispatch(errorActions.setError({
                 errorTitle: 'Opps. Det skjedde en feil da vi skulle slette deg.' ,
                 errorMessage: error.toString()
@@ -93,6 +95,7 @@ export const requestDeleteUser = () => {
             const ret = await deleteUser();
             dispatch(authActions.logOut());
         } catch (error) {
+            dispatch(authActions.logOut());
             dispatch(errorActions.setError({
                 errorTitle: 'Opps. Det skjedde en feil da vi skulle slette deg.' ,
                 errorMessage: error.toString()

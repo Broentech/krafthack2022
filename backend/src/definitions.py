@@ -14,7 +14,7 @@ __author__ = 'Luca'
 
 MODEL_FOLDER = "models"
 
-DATASET_PATH= "data/krafhack.csv"
+DATASET_PATH= "data/krafhack2.csv"
 
 MODEL_NAMES = [f"Bolt_{i}_Tensile" for i in range(1,7)]
 

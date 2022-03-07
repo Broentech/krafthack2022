@@ -18,6 +18,8 @@ const MainNavigation = () => {
             <nav>
                 <ul>
                     {!is_logged_in && <li><NavLink  to='/auth'>Login</NavLink ></li> }
+                    {is_logged_in && <li><NavLink  to='/models'>Models</NavLink ></li> }
+                    {is_logged_in && <li><NavLink  to='/config'>Configuration</NavLink ></li> }
                     {is_logged_in && <li><NavLink  to='/predictions'>Predictions</NavLink ></li> }
                     {is_logged_in && <li><NavLink  to='/user'>Profile</NavLink ></li> }
                     {is_logged_in && <li><button onClick={logoutHandler}>Logout</button></li>}

@@ -27,6 +27,7 @@ const FacebookButton = (props) => {
                 const user = result.user;
                 const credential = FacebookAuthProvider.credentialFromResult(result);
                 const accessToken = credential.accessToken;
+                //console.log('TOKEN : ' , accessToken);
                 props.userInfoFromFacebook({
                     user : user,
                     token : accessToken

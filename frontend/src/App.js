@@ -6,6 +6,8 @@ import PredictionsPage from "./pages/PredictionsPage";
 import UserProfilePage from "./pages/UserProfile";
 import Layout from "./components/Layout/Layout";
 import {useSelector} from "react-redux";
+import ConfigPage from "./pages/ConfigPage";
+import ModelsPage from "./pages/ModelsPage";
 
 const App = () => {
     const navigate = useNavigate();
@@ -27,6 +29,8 @@ const App = () => {
                     {!is_logged_in && <Route exact path='/auth' element={<AuthPage />} />}
                     {is_logged_in && <Route exact path='/user' element={<UserProfilePage />} />}
                     {is_logged_in && <Route exact path='/predictions' element={<PredictionsPage />} />}
+                    {is_logged_in && <Route exact path='/config' element={<ConfigPage />} />}
+                    {is_logged_in && <Route exact path='/models' element={<ModelsPage />} />}
                     <Route path='*' element={<p>Page not found</p>} />
                 </Routes>
             </Layout>

@@ -5,7 +5,7 @@ import classes from './MainView.module.css';
 import {connectSocketIo} from "../../context/socket";
 import store from "../../store";
 import {useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {predictionsActions} from "../../store/predictions-slice";
 import CurrentPredictions from "./CurrentPredictions";
 
@@ -13,7 +13,13 @@ const MainView = () => {
     const [buttonName , setButtonName] = useState('Disconnect')
     const dispatch = useDispatch();
     let socket;
+    const startDate = useSelector((state) => state.pred.startDate);
     useEffect(() => {
+
+        if(socket) {
+            socket.disconnect();
+        }
+
         socket = connectSocketIo(store.getState().auth.token.toString());
         socket.emit('getTimeseries');
         socket.on('getTimeseries', (data) => {
@@ -52,25 +58,11 @@ const MainView = () => {
         });
 
         return () => socket.disconnect();
-    }, []);
+    }, [startDate]);
 
-    const tryReconnect = () => {
-        if(!socket) {
-            socket = connectSocketIo(store.getState().auth.token.toString());
-        }
-        if(!socket.connected) {
-            console.log('CONNECTING');
-            socket.connect();
-            socket.emit('getTimeseries');
-        } else {
-            console.log('DISCONNECTING');
-            socket.disconnect();
-        }
-    }
 
     return (
         <div className={classes.mainview}>
-            <button onClick={tryReconnect}>{buttonName}</button>
             <PredTitle className={classes.mainview_header} />
             <div className={classes.mainview_row}>
                 <CurrentPredictions />

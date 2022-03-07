@@ -9,6 +9,7 @@ import {
 } from "recharts";
 
 const CurrentBars = (props) => {
+
     return (
         <BarChart
             width={600}
@@ -23,7 +24,7 @@ const CurrentBars = (props) => {
         >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
-            <YAxis />
+            <YAxis type="number" domain={['auto' , 'auto']} />
             <Tooltip />
             <Legend />
             <Bar

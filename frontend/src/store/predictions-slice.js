@@ -1,7 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const MAX_ARRAY_LENGTH = 100;
-const TENSION_THREHSOLD_VALUE = 600;
 
 const predictionsSlice = createSlice({
     name: 'predictions' ,
@@ -10,9 +9,24 @@ const predictionsSlice = createSlice({
         modelInput : {} ,
         modelOutput : {} ,
         currentModelOutput : {} ,
-        thresholdFindings : []
+        thresholdFindings : [] ,
+        tensionThreshold : 1700 ,
+        startDate : '1971-01-25 11:28:48' ,
+        anomEvents : []
     } ,
     reducers: {
+        setTensionThreshold(state, action) {
+            if(action && action.payload && action.payload.tensionThreshold) {
+                console.log('New Threshold Value : ' , action.payload.tensionThreshold);
+                state.tensionThreshold = action.payload.tensionThreshold;
+            }
+        },
+        setStartDate(state, action) {
+            if(action && action.payload && action.payload.startDate) {
+                console.log('New startDate : ' , action.payload.startDate);
+                state.startDate = action.payload.startDate;
+            }
+        },
         appendMode(state, action) {
             if(action &&
                 action.payload &&
@@ -69,7 +83,7 @@ const predictionsSlice = createSlice({
                             state.modelOutput[sensorname].shift();
                         }
                         let color = '#0A540DFF'
-                        if (value >= TENSION_THREHSOLD_VALUE) {
+                        if (value >= state.tensionThreshold) {
                             color = '#B70A0AFF'
                             state.thresholdFindings.push({
                                 sensor : sensorname ,
@@ -89,7 +103,8 @@ const predictionsSlice = createSlice({
             state.modelInput = {};
             state.modelOutput = {};
             state.currentModelOutput = {};
-            state.thresholdFindings = []
+            state.thresholdFindings = [];
+            state.anomEvents = [];
         }
     }
 });
