@@ -2,13 +2,10 @@ import React, {useEffect , Fragment} from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import WelcomePage from "./pages/Welcome";
 import AuthPage from "./pages/Auth";
-import TodosPage from "./pages/TodosPage";
-import TimeSeriesPage from "./pages/TimeSeriesPage";
+import PredictionsPage from "./pages/PredictionsPage";
 import UserProfilePage from "./pages/UserProfile";
 import Layout from "./components/Layout/Layout";
 import {useSelector} from "react-redux";
-import SideBar from "./components/Layout/SideBar";
-import { socket, SocketContext } from './context/socket';
 
 const App = () => {
     const navigate = useNavigate();
@@ -16,7 +13,7 @@ const App = () => {
 
     useEffect(() => {
         if (is_logged_in) {
-            navigate('/todos');
+            navigate('/user');
         } else {
             navigate('/auth');
         }
@@ -29,8 +26,7 @@ const App = () => {
                     <Route exact path='/' element={<WelcomePage />} />
                     {!is_logged_in && <Route exact path='/auth' element={<AuthPage />} />}
                     {is_logged_in && <Route exact path='/user' element={<UserProfilePage />} />}
-                    {is_logged_in && <Route exact path='/todos' element={<TodosPage />} />}
-                    {is_logged_in && <Route exact path='/ts' element={<TimeSeriesPage />} />}
+                    {is_logged_in && <Route exact path='/predictions' element={<PredictionsPage />} />}
                     <Route path='*' element={<p>Page not found</p>} />
                 </Routes>
             </Layout>

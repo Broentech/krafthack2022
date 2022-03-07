@@ -3,21 +3,23 @@ import { createSlice } from '@reduxjs/toolkit';
 const authSlice = createSlice({
     name: 'auth' ,
     initialState: {
+        name: null,
         token: null,
         email: null,
+        photoURL: null,
         expiresIn: null,
         is_logged_in: false
     } ,
     reducers: {
         setToken(state, action) {
             if (action && action.payload && action.payload.token) {
+                state.name = action.payload.name;
                 state.token = action.payload.token;
                 state.email = action.payload.email;
+                state.photoURL = action.payload.photoURL;
                 state.expiresIn = action.payload.expiresIn;
                 state.is_logged_in = (state.token.length > 0);
                 state.failed = null;
-            } else {
-                console.log('authSlice::setToken - Invalid payload')
             }
         } ,
         logOut(state) {

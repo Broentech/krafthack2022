@@ -14,12 +14,11 @@ const MainNavigation = () => {
 
     return (
         <header className={classes.header}>
-            <NavLink className={classes.logo} to='/'>Seed Project</NavLink >
+            <NavLink className={classes.logo} to='/'>Krafthack 2022 - Broentech</NavLink >
             <nav>
                 <ul>
                     {!is_logged_in && <li><NavLink  to='/auth'>Login</NavLink ></li> }
-                    {is_logged_in && <li><NavLink  to='/todos'>Todos</NavLink ></li> }
-                    {is_logged_in && <li><NavLink  to='/ts'>Timeseries</NavLink ></li> }
+                    {is_logged_in && <li><NavLink  to='/predictions'>Predictions</NavLink ></li> }
                     {is_logged_in && <li><NavLink  to='/user'>Profile</NavLink ></li> }
                     {is_logged_in && <li><button onClick={logoutHandler}>Logout</button></li>}
                 </ul>

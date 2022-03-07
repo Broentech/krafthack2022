@@ -33,7 +33,7 @@ const TimeSeries = () => {
         });
 
         return () => socket.disconnect();
-    }, [])
+    }, []);
 
     const tryReconnect = () => {
         if(!socket.connected) {

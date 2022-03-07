@@ -1,7 +1,8 @@
+import UserProfile from "../components/Auth/UserProfile";
 
 const UserProfilePage = () => {
     return (
-        <h1>User Profile</h1>
+        <UserProfile />
     );
 };
 

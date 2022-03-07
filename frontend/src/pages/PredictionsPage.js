@@ -1,13 +1,13 @@
 
-import TimeSeries from "../components/TimeSeries/TimeSeries";
+import MainView from "../components/Predictions/MainView";
 import {Fragment} from "react";
 
-const TimeSeriesPage = () => {
+const PredictionsPage = () => {
     return (
         <Fragment>
-            <TimeSeries />
+            <MainView />
         </Fragment>
     );
 };
 
-export default TimeSeriesPage;
+export default PredictionsPage;

@@ -5,13 +5,13 @@ import {getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCV3Wk9tNZPbotHg9lF9xDbzgm0e4-xEUI",
-    authDomain: "learn-react-10897.firebaseapp.com",
-    databaseURL: "https://learn-react-10897-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "learn-react-10897",
-    storageBucket: "learn-react-10897.appspot.com",
-    messagingSenderId: "849262235450",
-    appId: "1:849262235450:web:1cf205efee2078aff58a03"
+    apiKey: "AIzaSyCVhC-GQeMuqcZfK_-_yvlMXuk00ZFN008",
+    authDomain: "krafthack2022.firebaseapp.com",
+    projectId: "krafthack2022",
+    storageBucket: "krafthack2022.appspot.com",
+    messagingSenderId: "733683085520",
+    appId: "1:733683085520:web:e97ba3709d2a1d9e4feed5",
+    measurementId: "G-2BZQYQ08LD"
 };
 
 const FacebookButton = (props) => {
