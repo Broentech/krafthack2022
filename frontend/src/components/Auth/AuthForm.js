@@ -93,6 +93,7 @@ const AuthForm = () => {
                 <FacebookButton userInfoFromFacebook={userInfoFromFacebook}/>
                 {hasFail && <div className={classes.error}><p>{login_failed}</p></div>}
             </form> }
+            <p>To delete your user and data, please see the Profile page once you have logged in</p>
         </section>
     );
 };
